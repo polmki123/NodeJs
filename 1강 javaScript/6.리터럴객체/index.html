@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var b = [1,2,3, "Hello"] // 배열 인덱스 화를 시킬 수 있다. 
+    var a = {  // 이터럴 기본적으로 object 이다. 
+        'a' : 110, // 각각을 멤버라고 부른다. 
+        'b' : 'hello',
+        'c' : function(){
+            this.a++;
+        }
+    } 
+    // var a = new Object() 이 문장이 생략 되어 있다.
+    
+    console.log(typeof a)
+    Object.prototype.sum = function(){
+        console.log(this.a + 20);
+    }
+    a.sum();
+    a.c();
+    a.c();
+    console.log(a.a);
+</script>
+</html>

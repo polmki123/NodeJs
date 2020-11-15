@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var a = 5;
+    if ( a < 10)
+    {
+        console.log( "10보다 작습니다.") ; 
+    }
+    else if ( a < 20)
+    {
+        console.log( "20보다 작습니다.") ; 
+    }
+    // 같은 값 뿐만 아니라 형태까지 같은지 확인한다. 
+    if ( a === 5 )
+    {
+        console.log( "5 입니다. ") ; 
+    }
+    // 같은 값인고 형태가 다른 경우 에러는 뱉는다. 
+    if ( a !== '5' )
+    {
+        console.log( "5이고 형태는 다른형태 입니다. ") ; 
+    }
+    // 결과 출력되는 것을 확인된다. 
+    if ( a == '5' )
+    {
+        console.log( "5이고 형태는 다른형태 입니다. ") ; 
+    }
+    // 형태 체크를 한다. 
+    switch ( "yello" ) {
+        case "blue" :
+            console.log( "파란색 입니다. ");
+            break; 
+        default :
+            console.log("모든형태를 벗어나는 조건");
+    }
+    var a = '1';
+    // 아래에 보면 +a 로 되는 것을 확인 할 수 있다. 
+    // +a의 뜻은 문자를 숫자로 형변환 하겠다는 것이다. 
+    switch ( +a ) {
+        case 1 :
+            console.log( "파란색 입니다. ");
+            break; 
+        default :
+            console.log("모든형태를 벗어나는 조건");
+    }
+
+    function MyNum (num)
+    {
+        if ( num < 10){
+            return "10보다 작습니다."
+        }
+        else
+        {
+            return "10보다 큽니다."
+        }
+    }
+</script>
+</html>

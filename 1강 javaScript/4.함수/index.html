@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function test(a, b)
+    {
+        console.log("a는 " + a);
+        console.log("b는 " + b);
+    }
+    test(10, "hahah");
+
+    function sum( a, b)
+    {
+        return a + b ;
+    }
+    var c = sum(5,5);
+
+    console.log(c);
+
+    var call = function(){
+        console.log("call 함수를 호출 하였습니다. " );
+    }
+    var d = call()
+
+    var sum2 = function(a,b){
+        return a+b
+    }
+    var d2 = sum2(3,5);
+    console.log(d2);
+
+    function Car(a,b, c= "이동"){
+        this.name   = a; //외부에서 선언가능 
+        this.color  = b;
+        var move    = c; //외부에서 선언 불가능 private 변수  
+    }
+
+    var a = new Car( "현대", "노란색");
+    console.log(a.name);
+    console.log(a.color);
+    console.log(a.move);
+    var b = new Car( "기아자동차", "파란색");
+    console.log(b.name);
+    console.log(b.color);
+
+</script>
+</html>
