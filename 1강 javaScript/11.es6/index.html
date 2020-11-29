@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+하위 브라우저에서 호환을 하려면 바벨이란것이 필요하다.
+nodejs 에서는 
+npx babel-cli class.js 라고 명시한다. 바벨을 명시하여 옛날언어로 바꿔주어 모든 언어에서 사용가능하세 해준다. 
+</body>
+<script>
+    class Car {
+        constructor(a,b){
+            this.name = a;
+            this.color = b;
+        }
+
+        move()
+        {
+            console.log(this.name + "차이고", this.color + "색입니다.");
+        }
+    }
+    var a = new Car ("현대", "노란")
+    a.move()
+</script>
+
+</html>
