@@ -15,9 +15,27 @@ function test( num, callback ){
     callback();
 }
 
+// 콜백 함수 사용법 
+// 함수를 변수로 넣어 줄 때 사용 
 test( 1, function(){
     console.log( "콜백함수가 실행됩니다. ")
 })
+
+// 자바 스크립트 클로저 
+// 함수 내에서 메모리 공간을 사용한다. 
+function ex_cl(){
+    var num = 0;
+    return function(){
+        num++;
+        console.log(num);
+    }
+}
+
+var test = ex_cl();
+test(); // 지금 보면 마치 함수 처럼 한번더 () 를 사용한 것인 것을 확인 할 수 있다. 
+test(); // 뭔가 페이지에서 처리 하는데 사용?
+
+
 </script>
 
 </html>
