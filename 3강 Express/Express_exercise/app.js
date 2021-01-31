@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/fastcampus', (req, res) => {
-    res.send('fastcampus get');
+    res.send('fastcampus get2222');
 });
 
 app.listen(port, () => {
