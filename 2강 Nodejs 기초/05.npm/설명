@@ -1,0 +1,9 @@
+npm init으로 패키지 파일 설정 
+dependencies 는 어떤 파일이 사용되었는지 명시 되어 있다. 
+package-lock.json은 각각의 모듈은 필요한 모듈의 최적의 버전들을 명시해둔다. 
+이를 통해 명시한 버전들이 모듈 충돌을 방지 해준다. 
+    -express
+        -lodash v3
+    -uuid4 
+        -lodash v4
+    -lodash v4 

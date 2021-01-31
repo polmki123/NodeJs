@@ -1,0 +1,6 @@
+REST API
+GET /users => 사용자정보를 도출 
+POST /users => 사용자 추가 
+GET /users/(ID) => 한명만 볼 때 
+PUT /users/(ID) => 한명 수정 진행 
+DELETE /users/(ID) => 삭제 
