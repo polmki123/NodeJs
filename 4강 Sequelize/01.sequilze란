@@ -1,0 +1,1 @@
+sequlize는 ORM Nodejs 로 mysql 또는 postgresql(db)를 제어할수 있게 해줌 

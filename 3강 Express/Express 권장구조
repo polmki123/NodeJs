@@ -1,0 +1,6 @@
+controllers/index  대분류url + 폴더 위치 
+controllers/admin/index ( admin url + 미들웨어 )
+controllers/admin/admin.ctrl,js ( 컨트롤러 역할  )
+
+server.js 서버 만 
+app.js express 세팅만 

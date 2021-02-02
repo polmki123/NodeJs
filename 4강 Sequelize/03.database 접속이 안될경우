@@ -1,0 +1,28 @@
+비번을 까먹을 경우
+
+일단 관리자 권한으로 cmd를 킨 후
+cd C:\Program Files\MySQL\MySQL Server 8.0\bin
+로 들어간다.
+
+그후 
+mysqld --data_dir="C:\Program Files\MySQL\MySQL Server 8.0\data" --console --skip-grant-tables --share-memory
+로 들어간다. 
+
+그리고 다른 cmd를 킨 후 
+mysql -u root 
+use mysql 
+update user set authentication_string=null WHERE User='root'; 
+를 작성한다. 
+
+flush privileges;
+그 다음 다시 cmd mysql를 접속한다.
+mysql -u root 
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH cashing_sha2_password BY '1234';
+use mysql
+select authentication_string from user;
+를 치면 정상적으로 password 가 적용된 것을 확인 할 수 있다.
+
+이제 mysql shell로 접속해서 잘 되는지 안되는지를 확인한다. 
+js 상태에서 \connect root@localhost를 입력한다.
+비번을 1234 입력하면 정상적으로 되는 것을 확인 할수 있다. 
