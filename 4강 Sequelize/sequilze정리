@@ -1,0 +1,10 @@
+CRUD 
+
+SELECT, INSERT, UPDATE, DELETE
+
+models.테이블명.create(데이터)
+models.테이블명.findall(조회조건)
+models.테이블명.findByPk(primary key)
+models.테이블명.findOne(조회조건)
+models.테이블명.update(데이터, 조회조건 )
+models.테이블명.destory(조회조건)

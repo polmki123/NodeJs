@@ -1,0 +1,36 @@
+server.js 서버 구성 코드 
+components 는 react의 components 
+container는 react 
+reducers는 redux 용 이다. 
+
+
+Equality
+==와 !=는 Equality 연산자이다. Equality라고 해봤자 사실 영어로는 그 뉘앙스가 제대로 와닿지 않는다. 중요한 점은 JavaScript에서 ==를 사용하면 연산이 되기 전에 피연산자들을 먼저 비교할 수 있는 형태로 변환시킨다는 것이다.
+
+따라서 ==를 사용하면 다음과 같은 사실이 성립한다.
+
+254 == '254'                // return true
+true == 1                   // return true
+undefined == null           // return true
+'abc' == new String('abc')  // return true
+null == false               // return false
+'true' == true              // return false
+true == 2                   // return false
+
+개인적으로 5-7번째 줄은 true가 될 수도 있을 것 같아 시도해봤는데 false를 리턴했다.
+
+Identity
+===와 !==는 Identity 연산자이다. 이 녀석은 ==와는 반대로 형변환을 하지 않고 연산한다.
+
+254 === '254'               // return false
+true === 1                  // return false
+undefined === null          // return false
+'abc' === new String('abc') // return false
+그럼 CoffeeScript가 is를 ===로 변환하는 이유는 뭐지?
+그 이유는 여기에 잘 나와있다. 비루한 영어 실력으로 번역해보자면,
+
+== 연산자는 작업자가 원치 않는 강제 형변환을 실행하고 그것이 다른 언어의 ==연산자와는 차이가 있는 동작이므로 ==를 ===로 컴파일한다는 것이다.
+
+아무래도 명시적인 형변환을 자주 사용해야 할 것 같다.
+
+container는 components를 포함하고 있다. 

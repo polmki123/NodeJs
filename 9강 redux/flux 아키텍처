@@ -1,0 +1,14 @@
+flux 구조 
+
+    action ( CRUD (create, read, update, delete )) 
+      ▼
+    store   < -- > reducers ( 하나하나씩 순회 하면서 데이터를 새롭게 리턴, 데이터의 불변성을 유지하기 위해서 사용, 기존의 데이터에 대한 수정없이 새로운 데이터를 반환 )
+      ▼
+    react 
+
+side effect 상태 변화를 일으키는 모든것들 
+            단 변화성 데이터가 흘러가는 것들 
+
+단방향성으로 갈 수 있는 것 reducer를 사용 
+
+npm i redux --save 

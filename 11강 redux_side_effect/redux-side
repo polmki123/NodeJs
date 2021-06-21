@@ -1,0 +1,7 @@
+redux와 react에 백앤드와 반응을 일으켜 모든 변화를 주게하는 것들을 side-effect라고한다. 
+redux store에 미치는 모든 요소들 side_effect 
+
+이를 관리 하기 위해 redux_thunk를 사용 햇으나
+최근에는 redux_saga를 사용한다. 
+
+state 일반 class, state-less function 

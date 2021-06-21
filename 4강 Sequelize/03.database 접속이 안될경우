@@ -26,3 +26,5 @@ select authentication_string from user;
 이제 mysql shell로 접속해서 잘 되는지 안되는지를 확인한다. 
 js 상태에서 \connect root@localhost를 입력한다.
 비번을 1234 입력하면 정상적으로 되는 것을 확인 할수 있다. 
+
+만약 mysql shell로 접속해서 더 이상 진행이 안되는 경우 \sql로 변경하고 진행한다. 

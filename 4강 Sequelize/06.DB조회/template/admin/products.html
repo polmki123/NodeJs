@@ -1,0 +1,29 @@
+{% set title = "관리자 리스트" %}
+{% extends "layout/base.html" %}
+ 
+{% block content -%}
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>제목</th>
+            <th>작성일</th>
+            <th>삭제</th>
+        </tr>
+
+        {% for product in Products %}
+        <tr>
+            <td>
+                {{ product.name }}
+            </td>
+            <td>
+                {{ product.price }}
+            </td>
+            <td>
+                <a href="#" class="btn btn-danger">삭제</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/admin/products/write" class="btn btn-default">작성하기</a>
+
+{% endblock %}

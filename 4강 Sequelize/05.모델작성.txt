@@ -1,0 +1,4 @@
+models 폴더에 sequelize로 모델을 만드는 신규 코드를 작성한다. 
+
+
+app.js 에 sync 를 새롭게 작성한다. 

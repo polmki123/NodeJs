@@ -1,0 +1,124 @@
+scalar DateTime
+
+type User {
+  id: ID! 
+  name: String!
+  email: String! 
+  salt: String
+  password: String! 
+  zipCode: String! 
+  address: String! 
+  addressDetail: String!
+  phone: String! 
+  cart: [Cart!]!
+  payment: [Payment!]!
+  buyList: [BuyList!]!
+  createdAt: DateTime! 
+  updatedAt: DateTime! 
+}
+
+type Product {
+  id: ID!
+  name: String! 
+  price: Int! 
+  mainCategory: String! 
+  subCategory: String!
+  files: [File!]!
+  colors: [Color!]!
+  sizes: [Size!]!
+  stocks: [Stock!]!
+  productDetailFile: [ProductDetailFile!]!
+  productSizeFile: [ProductSizeFile!]!
+  numberOfSales: Int!
+  createdAt: DateTime! 
+  updatedAt: DateTime! 
+}
+
+type File {
+  id: ID! 
+  url: String! 
+  product: Product! 
+}
+
+type ProductDetailFile {
+  id: ID! 
+  productDetailFile: String! 
+  product: Product! 
+}
+
+type ProductSizeFile {
+  id: ID! 
+  productSizeFile: String! 
+  product: Product! 
+}
+
+type Size {
+  id: ID! 
+  size: String! 
+  product: Product!
+  cart: Cart!
+  payment: Payment!
+  buyList: BuyList!
+}
+
+type Color {
+  id: ID! 
+  color: String! 
+  product: Product!
+  cart: Cart!
+  payment: Payment!
+  buyList: BuyList!
+}
+
+type Stock {
+  id: ID! 
+  stock: Int! 
+  product: Product!
+  cart: Cart!
+  payment: Payment!
+}
+
+type Count {
+  id: ID! 
+  count: Int! 
+  cart: Cart
+  payment: Payment! 
+}
+
+type Cart {
+  id: ID! 
+  user: User! 
+  product: [Product!]!
+  sizeId: [Size!]!
+  colorId: [Color!]! 
+  stockId: [Stock!]! 
+  count: [Count!]!
+  payment: [Payment!]
+}
+
+type Quantity {
+  id: ID!
+  quantity: Int!
+  user: User! 
+  buyList: [BuyList!]!
+}
+
+type BuyList {
+  id: ID! 
+  user: User! 
+  product: [Product!]! 
+  size: [Size!]! 
+  color: [Color!]!
+  quantity: [Quantity!]!
+}
+
+type Payment {
+  id: ID!
+  user: User! 
+  product: [Product!]! 
+  size: [Size!]!
+  color: [Color!]!
+  stock: [Stock!]!
+  count: [Count!]!
+  cart: [Cart!]
+}

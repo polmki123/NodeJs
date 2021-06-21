@@ -1,0 +1,9 @@
+type Mutation {
+    addCart(
+        product: [String!] 
+        sizeId: [String!]
+        colorId: [String!] 
+        stockId: [String!] 
+        count: [Int!]
+    ):Boolean!
+}

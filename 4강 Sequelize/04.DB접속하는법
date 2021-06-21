@@ -1,0 +1,11 @@
+sequelize 와 mysql2 설치 
+
+npm install mysql2
+
+npm install sequelize@4.42.0
+
+models를 만들고 model를 생성 이를 연결 시킨다.
+
+filter를 시키고 foreach를 통해 모델을 생성 
+
+sequelize를 생성하고 sequelize.authentication 시킴 

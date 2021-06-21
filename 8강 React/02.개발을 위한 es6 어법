@@ -1,0 +1,4 @@
+jsx = javascript + xml 
+react는 javascript와 xml을 사용할 수 있게 해준다 
+templete 를 사용할 필요가 없다. 별도의 모드를 이용해서 사용한다. 
+해당 데이터를 업데이트 한다는 것임으로 <p key={}>

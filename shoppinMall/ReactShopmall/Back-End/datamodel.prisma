@@ -1,0 +1,123 @@
+type User {
+  id: ID! @id
+  name: String!
+  email: String! @unique
+  password: String! 
+  zipCode: String! 
+  address: String! 
+  addressDetail: String!
+  phone: String! 
+  cart: [Cart!]! @relation(name: "UserOfCart", onDelete: CASCADE)
+  buyList: [BuyList!]! @relation(name: "UserOfBuyList", onDelete: CASCADE)
+  payment: [Payment!]! @relation(name: "UserOfPayment", onDelete: CASCADE)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Product {
+  id: ID! @id 
+  name: String! 
+  price: Int! 
+  mainCategory: String! 
+  subCategory: String! 
+  files: [File!]! @relation(name: "FileofProduct", onDelete: CASCADE)
+  colors: [Color!]! @relation(name: "ProductOfColor", onDelete: CASCADE)
+  sizes: [Size!]! @relation(name: "ProductOfSize", onDelete: CASCADE)
+  stocks: [Stock!]! @relation(name: "ProductOfStock", onDelete: CASCADE)
+  productDetailFile: [ProductDetailFile!]! @relation(name: "FileOfProductDetail", onDelete: CASCADE)
+  productSizeFile: [ProductSizeFile!]! @relation(name: "FileOfSize", onDelete: CASCADE) 
+  numberOfSales: Int! @default(value: 0)
+  cart: [Cart!]! @relation(name: "ProductOfCart", onDelete: CASCADE)
+  buyList: [BuyList!]! @relation(name: "ProductOfBuyList", onDelete: CASCADE)
+  payment: [Payment!]! @relation(name: "ProductOfPayment", onDelete: CASCADE)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type File {
+  id: ID! @id 
+  url: String! 
+  product: Product! @relation(name: "FileofProduct")
+}
+
+type ProductDetailFile {
+  id: ID! @id 
+  productDetailFile: String! 
+  product: Product! @relation(name: "FileOfProductDetail")
+}
+
+type ProductSizeFile {
+  id: ID! @id 
+  productSizeFile: String @default(value: "https://mblogthumb-phinf.pstatic.net/MjAxNzExMDdfMTQ3/MDAxNTEwMDQxODYyMjY1.kAvpXchJkjzWlDqtAQgYS7MLR9PFVIIe4vcBfUR6jOQg.FHU59tAPCbw6YolyoEnnpALAKzu9-01K41e8-Nj3vlQg.JPEG.siyeonzzz/171106061107.jpg?type=w800")
+  product: Product! @relation(name: "FileOfSize")
+}
+
+type Size {
+  id: ID! @id 
+  size: String! 
+  product: Product! @relation(name: "ProductOfSize")
+  cart: [Cart!]! @relation(name: "CartOfSize")
+  payment: [Payment!]! @relation(name: "PaymentOfSize")
+  buyList: [BuyList!]! @relation(name:"BuyListOfSize")
+}
+
+type Color {
+  id: ID! @id 
+  color: String! 
+  product: Product! @relation(name: "ProductOfColor")
+  cart: [Cart!]! @relation(name: "CartOfColor")
+  payment: [Payment!]! @relation(name: "PaymentOfColor")
+  buyList: [BuyList!]! @relation(name:"BuyListOfColor")
+}
+
+type Stock {
+  id: ID! @id 
+  stock: Int! 
+  product: Product! @relation(name: "ProductOfStock")
+  cart: [Cart!]! @relation(name: "CartOfStock")
+  payment: [Payment!]! @relation(name: "PaymentOfStock")
+}
+
+type Count {
+  id: ID! @id 
+  count: Int! 
+  cart: [Cart!] @relation(name: "CartOfCount")
+  payment: [Payment!]! @relation(name: "PaymentOfCount")
+}
+
+type Cart {
+  id: ID! @id
+  user: User! @relation(name: "UserOfCart")
+  product: [Product!]! @relation(name: "ProductOfCart")
+  sizeId: [Size!]! @relation(name: "CartOfSize")
+  colorId: [Color!]! @relation(name: "CartOfColor")
+  stockId: [Stock!]! @relation(name: "CartOfStock")  
+  count: [Count!]! @relation(name: "CartOfCount", onDelete: CASCADE)  
+  payment: [Payment!] @relation(name: "PaymentOfCart")
+}
+
+type Quantity {
+  id: ID! @id 
+  quantity : Int! 
+  buyList: [BuyList!]! @relation(name:"BuyListOfQuanitity")
+}
+
+type BuyList {
+  id: ID! @id 
+  user: User! @relation(name: "UserOfBuyList")
+  product: [Product!]! @relation(name: "ProductOfBuyList")
+  size: [Size!]! @relation(name:"BuyListOfSize")
+  color: [Color!]! @relation(name:"BuyListOfColor")
+  quantity: [Quantity!]! @relation(name:"BuyListOfQuanitity")
+}
+
+type Payment {
+  id: ID! @id 
+  user: User! @relation(name: "UserOfPayment")
+  product: [Product!]! @relation(name: "ProductOfPayment")
+  size: [Size!]! @relation(name: "PaymentOfSize")
+  color: [Color!]! @relation(name: "PaymentOfColor") 
+  stock: [Stock!]! @relation(name: "PaymentOfStock") 
+  count: [Count!]! @relation(name: "PaymentOfCount", onDelete: CASCADE)
+  cart: [Cart!] @relation(name: "PaymentOfCart")
+}

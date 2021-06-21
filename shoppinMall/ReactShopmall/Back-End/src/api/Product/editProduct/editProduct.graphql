@@ -1,0 +1,61 @@
+type Mutation {
+    editProduct (
+        id: String! 
+        name: String 
+        price: Int
+        mainCategory: String 
+        subCategory: String 
+    ): Product!
+}
+
+type Mutation {
+    editNumberOfSales (
+        id: [String!]! 
+        saleCount: [Int!]!
+    ): Boolean! 
+}
+
+type Mutation {
+    editFile (
+        fileId: String 
+        file: [String] 
+    ): Boolean!
+}
+
+type Mutation {
+    editSize (
+        productId: String
+        sizeId: [String] 
+        sizeValue: [String]
+    ): Boolean!
+}
+
+type Mutation {
+    editColor (
+        productId: String
+        colorId: [String] 
+        colorValue: [String] 
+    ): Boolean! 
+}
+
+type Mutation {
+    editStock (
+        productId: String
+        stockId: [String] 
+        stockValue: [Int]
+    ): Boolean! 
+}
+
+type Mutation {
+    editProductDetailFile (
+        id: String! 
+        productDetailFile: String!
+    ): Product! 
+}
+
+type Mutation {
+    editProductSizeFile (
+        id: String! 
+        productSizeFile: String! 
+    ): Product! 
+}
