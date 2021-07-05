@@ -30,6 +30,7 @@ const ReduxCounter = connect(
   mapDispatchToProps // 이것은 add 를 반환 한다.  add를 쓰기 위해서는 dispatch라는 변수가 필요하다. 
 )(Counter)
 
+//reducer
 function counter(state = { count: 0 }, action) {
   const { count } = state
   switch (action.type) {

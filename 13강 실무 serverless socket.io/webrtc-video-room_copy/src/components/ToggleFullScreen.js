@@ -1,24 +1,25 @@
-const el = document.documentElement;
-document.fullscreenEnabled = document.fullscreenEnabled ||
-document.webkitFullscreenEnabled ||
-document.mozFullScreenEnabled ||
-document.msFullscreenEnabled;
-document.exitFullscreen = document.exitFullscreen ||
-document.webkitExitFullscreen ||
-document.mozCancelFullScreen ||
-document.msExitFullscreen;
-el.requestFullscreen = el.requestFullscreen ||
-el.webkitRequestFullscreen ||
-el.mozRequestFullScreen ||
-el.msRequestFullScreen;
+const element = document.documentElement
+// 기본적으로 fullscreen을 사용하지만 없는 경우에는 webkitfullscreen을 사용한다. 
+document.fullscreenEnabled = document.fullscreenEnabled 
+      || document.webkitFullScreenEnabled //이건 사파리 
+      || document.mozFullScreenEnabled  // 파이어폭스
+      || document.msFullscreenEnabled  //이건 ms 
+document.exitFullscreen = document.exitFullscreen 
+      || document.webkitExitFullscreen
+      || document.mozExitFullscreen
+element.requestFullscreen = element.requestFullscreen // chrome
+      || element.webkitFullScreen // 사파리
+      || element.mozFullScreenEnabled // 파이어폭스
+    
 const ToggleFullScreen = () => {
-  // full-screen available?
-  if (document.fullscreenEnabled) {
-    // are we full-screen?
+  if(document.fullscreenEnabled) {
     document.fullscreenElement ||
-    document.webkitFullscreenElement ||
-    document.mozFullScreenElement ||
-    document.msFullscreenElement ? document.exitFullscreen() : el.requestFullscreen();
+    document.webkitFullScreenElement ||
+    document.mozFullscreenElement  ||
+    document.msFullscreenElement ?
+    document.exitFullscreen() :
+      element.requestFullscreen()
   }
-};
-export default ToggleFullScreen;
+}
+
+export default ToggleFullScreen
